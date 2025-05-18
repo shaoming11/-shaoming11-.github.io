@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    padding: 20px;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+    transform: rotate(-45deg);
+    transform-origin: center;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: rotate(-45deg) translateY(0);
+    }
+    50% {
+        transform: rotate(-45deg) translateY(-20px);
+    }
+    100% {
+        transform: rotate(-45deg) translateY(0);
+    }
+}
+
+h1 {
+    color: white;
+    margin: 0;
+    transform: rotate(45deg);
+    transform-origin: center;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255,255,255,0.8);
+    }
+}
+
+img {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    transform: rotate(45deg);
+    transform-origin: center;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(45deg) rotate(360deg);
+    }
+}
+
+button {
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    transform: rotate(45deg);
+    transform-origin: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 15px rgba(255,105,180,0.5);
+}
+
+button:hover {
+    background: linear-gradient(45deg, #ff1493, #ff69b4);
+    transform: rotate(45deg) scale(1.05);
+    box-shadow: 0 8px 25px rgba(255,105,180,0.7);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: rotate(45deg) scale(1.05);
+    }
+    50% {
+        transform: rotate(45deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(45deg) scale(1.05);
+    }
+}
